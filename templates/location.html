@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <meta http-equiv ="X-UA-Compatible" content ="ie-edge">
+       <title> Login </title>
+       <style>
+        .relative {
+            padding: 10px;
+            position: relative;
+            background-color: #fff;
+            margin: 10px;
+        }
+
+        .butts {
+            margin-top: 250px;
+        }
+
+        .idk {
+            margin-left: 100px;
+            margin-right: 100px
+        }
+
+        .navitem {
+            display: inline-block;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            border: gray;
+            background-color: #6B92B9;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 50px
+        }
+
+        .moreinfo {
+            display: inline-block;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            border: gray;
+            background-color: #AB7BDA;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 50px
+        }
+
+        .back {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border: gray;
+            background-color: #C34848;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px
+        }
+        .center {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .top {
+            text-align: center;
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="relative">  
+            <form>
+                <input type="button" value="Back" onclick="history.back()" class="back">
+           </form>
+        </div>
+        <div class="idk"> 
+            <div class="top">
+            <h1> &emsp;Closest Poll Location</h1><br><br> 
+            <h2> &emsp; All Poll Locations Are Open From 7am - 7pm </h2>
+        </div>
+            <h2>&emsp;&emsp;&emsp;{{ name }}</h2>
+            <h3>&emsp;&emsp;&emsp;&emsp;{{ streetnum }} {{ streetname }}, {{ city }}, {{ state }} {{ zip }}</h3> 
+            <h4>&emsp;&emsp;&emsp;&emsp;&emsp;Precinct: {{ precinct }}</h4>  
+            <h4>&emsp;&emsp;&emsp;&emsp;&emsp;County: {{ county }}</h4> <br>
+            &emsp;<a href={{ site }}><button class="moreinfo">More Info</button></a>
+        </div>
+            
+    <div class="relative"> 
+    <div class="butts">
+    <div class="center">
+       <p>
+       <a href=signup><button class="navitem">Sign-Up</button></a>
+       <a href=takequiz><button class="navitem">Take Quiz</button></a>
+       <a href=exit><button class="navitem">Exit</button></a>
+        </p>
+    </div>
+    </div>
+    </div>
+   </body>
+</html>

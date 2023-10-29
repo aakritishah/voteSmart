@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <meta http-equiv ="X-UA-Compatible" content ="ie-edge">
+       <title> Generate PDF </title>
+       <style>
+        .relative {
+            padding: 10px;
+            position: relative;
+            background-color: #fff;
+            margin: 10px;
+        }
+
+        .navitem {
+            display: inline-block;
+            width: 125px;
+            height: 50px;
+            text-align: center;
+            border: gray;
+            background-color: #6B92B9;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 50px
+        }
+
+        .back {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border: gray;
+            background-color: #C34848;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="relative">  
+            <form>
+                <input type="button" value="Back" onclick="history.back()" class="back">
+           </form>
+        </div>
+
+        <h1>&emsp;Generate Sample Ballot</h1>
+        <p>&emsp;&emsp;This tool allows you to generate a PDF version of a sample ballot.</p>
+        <p>&emsp;&emsp;Generate a PDF to save or to print your results on to a sample ballot.<br></p>
+
+    <div class="relative">  
+
+        <a href="https://www.pbcelections.org/Portals/PalmBeach/ALL%20RACES%20General%20November%208%20%20Sample%20Ballots%20with%20Message%20General%20Election%20%281%29_1.pdf" target="_blank" rel="noopener noreferrer"><button class="navitem"> Generate Ballot</button></a>
+
+    </div>
+   </body>
+</html>
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <meta http-equiv ="X-UA-Compatible" content ="ie-edge">
+       <title> Sign-Up </title>
+       <style>
+        .relative {
+            padding: 10px;
+            position: relative;
+            background-color: #fff;
+            margin: 10px;
+        }
+
+        .navitem {
+            display: inline-block;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            border: gray;
+            background-color: #6B92B9;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 50px
+        }
+
+        .back {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border: gray;
+            background-color: #C34848;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="relative">  
+            <form>
+                <input type="button" value="Back" onclick="history.back()" class="back">
+           </form>
+        </div>
+
+        <h1>&emsp;Sign-Up: Error</h1>
+        <p>&emsp;&emsp;Your credentials are already taken. If you already have an account, please login. If not, select other credentials.<br></p>
+
+    <form method="POST" action="{{ url_for('signuppage') }}">
+        &emsp;{{ form.hidden_tag() }}
+        &emsp;{{ form.username }}
+        &emsp;{{ form.password }}
+        &emsp;{{ form.submit }}
+    </form>
+
+    <div class="relative">  
+       <p>
+       <a href=login><button class="navitem">Login</button></a>
+       <a href=takequiz><button class="navitem">Take Quiz</button></a>
+       <a href=exit><button class="navitem">Exit</button></a>
+        </p>
+    </div>
+   </body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+<style media="screen">
+  @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+:root {
+    --place: 1deg;
+}
+
+
+p {
+  background-color: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#my-pie-chart-container {
+  display: flex;
+  align-items: center;
+}
+
+#my-pie-chart {
+  background: conic-gradient(#00AEF3 0% {{ lscore }}, blueviolet {{ lscore }} {{ iscore }}, rgb(208, 8, 8) {{ iscore }} {{ rscore }});
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+#legenda {
+  margin-left: 20px;
+  background-color: white;
+  padding: 5px;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+}
+
+.entry-color {
+    height: 10px;
+    width: 10px;
+}
+
+.entry-text {
+  margin-left: 5px;
+}
+
+#color-red {
+  background-color: rgb(208, 8, 8);
+}
+
+#color-purple {
+  background-color: blueviolet;
+}
+
+#color-blue {
+  background-color: #00AEF3;
+}
+
+.back {
+        top:5;
+        right:5;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        border: gray;
+        background-color: #C34848;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+    }
+.relative {
+        padding: 10px;
+        position: relative;
+        background-color: #fff;
+        margin: 10px;
+    }
+.center {
+  align-items: center;
+  margin-left: 500px;
+  margin-top: 10px;
+}
+
+.center1 {
+  align-items: center;
+  margin-left: 500px;
+}
+.center3{
+  text-align: center;
+}
+
+.navitem {
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  border: gray;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background:#ffffff;
+
+}
+.all{
+  display: flex;
+}
+.circle-wrap {
+  display: grid;
+  grid-template-columns: repeat(1, 160px);
+  grid-gap: 80px;
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 150px;
+  height: 150px;
+  background: #d9d7da;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .val,
+.circle-wrap .circle .marc,
+.circle-wrap .circle .char,
+.circle-wrap .circle .ron,
+.circle-wrap .circle .cand1,
+.circle-wrap .circle .cand2 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0px, 150px, 150px, 75px);
+}
+
+.circle-wrap .inside-circle {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: #ffffff;
+  line-height: 120px;
+  text-align: center;
+  margin-top: 13px;
+  margin-left: 13px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+/* color animation */
+
+/* val */
+.mask .val {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: #00AEF3;
+}
+
+.mask.full-v,
+.circle .val {
+  animation: val 2s linear forwards;
+  transform: rotate(calc({{ rotatev }} * var(--place)))
+}
+
+/* marc */
+
+.mask .marc {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: rgb(208, 8, 8);
+}
+
+.mask.full-m,
+.circle .marc {
+    animation: val 2s linear forwards;
+    transform: rotate(calc({{ rotatem }} * var(--place)))
+}
+
+/* char */
+
+.mask .char {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: #00AEF3;
+}
+
+.mask.full-c,
+.circle .char {
+    animation: val 2s linear forwards;
+    transform: rotate(calc({{ rotatec }} * var(--place)))
+}
+
+/* ron */
+
+.mask .ron {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: rgb(208, 8, 8);
+}
+
+.mask.full-r,
+.circle .ron {
+  animation: val 2s linear forwards;
+  transform: rotate(calc({{ rotater }} * var(--place)))
+}
+
+/* cand1 */
+
+.mask .cand1 {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: rgb(208, 8, 8);
+}
+
+.mask.full-cand1,
+.circle .cand1 {
+  animation: val 2s linear forwards;
+  transform: rotate(calc({{ rotatec1 }} * var(--place)))
+}
+
+/* cand2 */
+
+.mask .cand2 {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: #00AEF3;
+}
+
+.mask.full-cand2,
+.circle .cand2 {
+  animation: val 2s linear forwards;
+  transform: rotate(calc({{ rotatec2 }} * var(--place)))
+}
+
+
+
+@keyframes val {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    stroke-dashoffset: 180;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <div class="relative">  
+    <form>
+        <input type="button" value="Back" onclick="history.back()" class="back">
+   </form>
+</div>
+  <h1>&emsp;These are your results:</h1><br><br>
+  <h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Party Alignment:</h2> <br><br>
+  <div class="center">
+    
+<div id="my-pie-chart-container">
+  <div id="my-pie-chart"></div>
+
+  <div id="legenda">
+    <div class="entry">
+      <div id="color-blue" class="entry-color"></div>
+      <div class="entry-text">Democratic</div>
+    </div>
+    <div class="entry">
+      <div id="color-purple" class="entry-color"></div>
+      <div class="entry-text">Independent</div>
+    </div>
+    <div class="entry">
+      <div id="color-red" class="entry-color"></div>
+      <div class="entry-text">Republican</div>
+    </div>
+  </div>
+</div>
+  </div> <br><br><br><br><br>
+
+
+
+  <div class="all">
+    <h2>&emsp;Senator Alignment:</h2>
+  <div class="circle-wrap">
+    <div class="circle">
+      <div class="mask full-v">
+        <div class="val"></div>
+      </div>
+      <div class="mask half">
+        <div class="val"></div>
+      </div>
+      <div class="inside-circle"> {{ sen1 }} </div>
+    </div>
+  </div>
+    <div class="circle-wrap">
+      <div class="circle">
+        <div class="mask full-m">
+          <div class="marc"></div>
+        </div>
+        <div class="mask half">
+          <div class="marc"></div>
+        </div>
+        <div class="inside-circle"> {{ sen2 }} </div>
+      </div>
+    </div>
+    <h2>&emsp;Governer Alignment:</h2>
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="mask full-c">
+            <div class="char"></div>
+          </div>
+          <div class="mask half">
+            <div class="char"></div>
+          </div>
+          <div class="inside-circle"> {{ gov1 }} </div>
+        </div>
+      </div>
+      
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="mask full-r">
+            <div class="ron"></div>
+          </div>
+          <div class="mask half">
+            <div class="ron"></div>
+          </div>
+          <div class="inside-circle"> {{ gov2 }} </div>
+        </div>
+      </div>
+      </div> <br>
+      <h2> &emsp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href=val><button class="navitem">Val Demings</button></a> &emsp; <a href="marco"><button class="navitem">Marco Rubio</button></a>  &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href=charlie><button class="navitem">Charlie Crist</button></a> &emsp;&ensp;<a href=ron><button class="navitem">Ron Desantis</button></a> </h2><br><br> <br> <br><br>
+      <div class="center3">
+      <h2>Representative Alignment:</h2>
+      <h3>District: {{ dist }}</h3>
+      <h3>Candidates: {{ c1name }}, {{ c2name }}</h3>
+    </div>
+    <div class="center">
+      <div class="all">
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="mask full-cand1">
+            <div class="cand1"></div>
+          </div>
+          <div class="mask half">
+            <div class="cand1"></div>
+          </div>
+          <div class="inside-circle"> {{ cand1score }} </div>
+        </div>
+      </div>
+      {% if c2name != 'N/A' %}
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="mask full-cand2">
+            <div class="cand2"></div>
+          </div>
+          <div class="mask half">
+            <div class="cand2"></div>
+          </div>
+          <div class="inside-circle"> {{ cand2score }} </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    </div>
+    {% if c2name != 'N/A' %}
+    <h2> &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp; <a href={{ site1 }} target="_blank" rel="noopener noreferrer"><button class="navitem">{{ c1name }} </button></a> &emsp;&ensp; <a href={{ site2 }} target="_blank" rel="noopener noreferrer"><button class="navitem">{{ c2name }}</button></a> </h2><br><br>
+    {% else %}
+    <h2> &emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp; <a href={{ site1 }} target="_blank" rel="noopener noreferrer"><button class="navitem">{{ c1name }}</button></a></h2><br><br>
+    {% endif %}
+    <div class="relative">  
+      <p>
+        <a href="pdf"><button class="navitem">Download PDF</button></a>
+      <a href=findpoll><button class="navitem">Find Poll Location</button></a>
+      <a href=exit><button class="navitem">Exit</button></a>
+       </p>
+   </div>
+  
+  
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <meta http-equiv ="X-UA-Compatible" content ="ie-edge">
+       <title> Login </title>
+       <style>
+        .relative {
+            padding: 10px;
+            position: relative;
+            background-color: #fff;
+            margin: 10px;
+        }
+
+        .navitem {
+            display: inline-block;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            border: gray;
+            background-color: #6B92B9;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 50px
+        }
+
+        .back {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border: gray;
+            background-color: #C34848;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="relative">  
+            <form>
+                <input type="button" value="Back" onclick="history.back()" class="back">
+           </form>
+        </div>
+
+            <h1>&emsp;Login</h1>
+            <p>&emsp;&emsp;Please enter your credentials below. If you do not have an account, either create one by signing up or you can proceed to taking a quiz.<br></p>
+            <h4>
+    <form method="POST" action="{{ url_for('loginpage') }}">
+        &emsp; {{ form.hidden_tag() }}
+        &emsp; {{ form.username }}
+        &emsp; {{ form.password }}
+        &emsp; {{ form.submit }}
+    </form>
+            </h4>
+
+    <div class="relative">  
+       <p>
+       <a href=signup><button class="navitem">Sign-Up</button></a>
+       <a href=takequiz><button class="navitem">Take Quiz</button></a>
+       <a href=exit><button class="navitem">Exit</button></a>
+        </p>
+    </div>
+   </body>
+</html>

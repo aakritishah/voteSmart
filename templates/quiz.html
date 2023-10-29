@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+        <title> Political Alignment Quiz </title>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.
+       1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+   </head>
+   <style type="text/css">
+    .relative {
+        padding: 10px;
+        position: relative;
+        background-color: #fff;
+        margin: 10px;
+    }
+    .container {
+        max-width: 1500px;
+        padding: 20px;
+    }
+    .back {
+        top:5;
+        right:5;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        border: gray;
+        background-color: #C34848;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+    }
+   </style>
+   <body>
+    <div class="relative">  
+        <form>
+            <input type="button" value="Back" onclick="history.back()" class="back">
+       </form>
+    </div>
+    <h1>&ensp;Political Alignment Quiz</h1>
+    <h2>&ensp;***If you are not signed in, your results will not be saved***</h2>
+    <p>&emsp;&emsp;Please truthfully answer the following questions to the best of your ability. 
+    The results will show you the political party that your answers most cloesly match.<br></p>
+        <div class="container">
+
+            <form action="{{ url_for('resultspage') }}" method="POST" role="form">
+            {% for question in form %}
+                <div class="question">
+                    <h3>&emsp;{{ question.label }}</h3>
+                </div>
+                <div class = "answer">
+                    {{ question }}
+                </div>
+            &emsp;{% endfor %}
+            <div class="submit">
+                <input type="submit" name="submit">
+            </div>
+            </form>
+            </div>
+        <p>
+            
+        </p>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+       <meta charset ="UTF-8">
+       <meta name = "viewport" content ="width=device-width, initial-scale=1.0">
+       <meta http-equiv ="X-UA-Compatible" content ="ie-edge">
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+       <title> VOTEsmart </title>
+       <style>
+            .relative {
+                padding: 10px;
+                position: relative;
+                background-color: #fff;
+                margin: 10px;
+            }
+
+            .center1 {
+            align-items: center;
+            text-align: center;
+            margin-left: 50px;
+            margin-right: 50px;
+            }
+            .navitem {
+                display: inline-block;
+                width: 150px;
+                height: 80px;
+                text-align: center;
+                border: gray;
+                background-color: #6B92B9;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                margin-left: 50px;
+            }
+
+            .welcome {
+                color: #C34848;
+            }
+            
+       </style>
+    </head>
+    <body>
+        <div class="center1">
+        <div class="welcome">
+       <h1>Welcome to VOTEsmart!</h1>
+    </div>
+    <h1>voteSmart is an educational web application seeking to inform potential US voters about the primary political parties they align with. </h1><br>
+    
+    <h3>Would You Like to Sign-up, Login, Take a Political Alignment Quiz, or Find a Voting Location?<br></h3>
+    <div class="relative">  
+       <p>
+       <a href=signup><button class="navitem">Sign-Up</button></a>
+       <a href=login><button class="navitem">Login</button></a>
+       <a href=takequiz><button class="navitem">Take Quiz</button></a>
+       <a href=findpoll><button class="navitem">Find Poll Location</button></a>
+        </p>
+    </div>
+</div>
+   </body>
+</html>
