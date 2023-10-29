@@ -17,3 +17,6 @@ run the python file: "routes.py" in terminal<br>
 
 ## languages and frameworks
 Python, CSS, HTML, SQL, Flask, Matplotlib, pandas
+
+## video walkthrough
+https://github.com/aakritishah/voteSmart/assets/78161415/ee80c668-1efc-4816-bf5f-6fb27fc67204
